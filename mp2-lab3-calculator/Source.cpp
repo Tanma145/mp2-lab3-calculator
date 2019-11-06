@@ -1,4 +1,23 @@
-
+#include "TCalculator.h"
+#include <iostream>
+#include <conio.h>
+using namespace std;
 int main() {
-	return 0;
+	try {
+		TCalculator calc;
+		string s;
+		cin >> s;
+		calc.SetExpr(s);
+		cout << calc.GetExpr() << endl;
+		calc.ToPostfix();
+		cout << calc.GetPostfix() << endl;
+		cout << calc.Calc();
+		_getch();
+		return 0;
+	}
+	catch(int a){
+		cout << a << " oof";
+		_getch();
+		return 0;
+	}
 }
