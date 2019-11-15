@@ -37,7 +37,7 @@ bool TCalculator::CheckBrackets(){
 
 void TCalculator::ToPostfix(){
 	string tmp = "(";
-	tmp += expr += ")";
+	(tmp += expr) += ")";
 	postfix = "";
 	st_c.Clear();
 	for (int i = 0; i < tmp.size(); i++) {
@@ -57,7 +57,6 @@ void TCalculator::ToPostfix(){
 				postfix += t;
 				t = st_c.Pop();
 			}
-
 			st_c.Push(t);
 			st_c.Push(tmp[i]);
 		}

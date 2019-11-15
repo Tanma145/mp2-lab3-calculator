@@ -6,9 +6,13 @@ int main() {
 	try {
 		TCalculator calc;
 		string s;
-		cin >> s;
+
+		getline(cin, s);
+
+//		cin >> s;
 		calc.SetExpr(s);
 		cout << calc.GetExpr() << endl;
+		if (!calc.CheckBrackets()) throw 0;
 		calc.ToPostfix();
 		cout << calc.GetPostfix() << endl;
 		cout << calc.Calc();

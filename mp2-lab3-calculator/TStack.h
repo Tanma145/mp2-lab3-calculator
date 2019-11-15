@@ -53,7 +53,7 @@ public:
 	}
 
 	T Pop() {
-		if (num == 0) throw num;
+		if (num == -1) throw num;
 		num--;
 		return arr[num + 1];
 	}
