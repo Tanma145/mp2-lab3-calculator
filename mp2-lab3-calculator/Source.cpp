@@ -1,6 +1,6 @@
 #include "TCalculator.h"
-#include <iostream>
 #include <conio.h>
+#include <iostream>
 using namespace std;
 int main() {
 	try {
@@ -8,8 +8,6 @@ int main() {
 		string s;
 
 		getline(cin, s);
-
-//		cin >> s;
 		calc.SetExpr(s);
 		cout << calc.GetExpr() << endl;
 		if (!calc.CheckBrackets()) throw 0;

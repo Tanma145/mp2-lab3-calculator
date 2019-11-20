@@ -1,4 +1,6 @@
 #include "TCalculator.h"
+#include <iostream>
+using namespace std;
 
 int TCalculator::Prior(char c){
 	switch (c) {
@@ -51,6 +53,8 @@ void TCalculator::ToPostfix(){
 			}
 		}
 		if (tmp[i] == '+' || tmp[i] == '-' || tmp[i] == '*' || tmp[i] == '/' || tmp[i] == '^') {
+			cout << st_c.Top() << endl;
+			if (tmp[i] == '-' && st_c.Top() == '(') postfix += '0';
 			char t = st_c.Pop();
 			postfix += ' ';
 			while (Prior(tmp[i]) <= Prior(t)) {
@@ -60,6 +64,7 @@ void TCalculator::ToPostfix(){
 			st_c.Push(t);
 			st_c.Push(tmp[i]);
 		}
+
 	}
 }
 
