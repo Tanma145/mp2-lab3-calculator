@@ -53,7 +53,6 @@ void TCalculator::ToPostfix(){
 			}
 		}
 		if (tmp[i] == '+' || tmp[i] == '-' || tmp[i] == '*' || tmp[i] == '/' || tmp[i] == '^') {
-			cout << st_c.Top() << endl;
 			if (tmp[i] == '-' && st_c.Top() == '(') postfix += '0';
 			char t = st_c.Pop();
 			postfix += ' ';

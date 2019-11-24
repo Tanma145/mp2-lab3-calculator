@@ -59,7 +59,7 @@ public:
 	}
 
 	T Top() {
-		if (num == -1) throw -1;
-		else return arr[num + 1];
+		if (num == -1) throw num;
+		return arr[num];
 	}
 };
