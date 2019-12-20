@@ -3,7 +3,7 @@ template <class T>
 class TStack {
 	T *arr;
 	int size;
-	int num;
+	int num; //текущее количество элементов в стеке
 public:
 	TStack(int _size = 10000) {
 		if (_size <= 0) throw _size;

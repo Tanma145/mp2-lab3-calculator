@@ -10,7 +10,7 @@ int main() {
 		getline(cin, s);
 		calc.SetExpr(s);
 		//cout << calc.GetExpr() << endl;
-		if (!calc.CheckBrackets()) throw 0;
+		if (!calc.CheckBrackets()) throw -1;
 		calc.ToPostfix();
 		//cout << calc.GetPostfix() << endl;
 		cout << calc.Calc();
