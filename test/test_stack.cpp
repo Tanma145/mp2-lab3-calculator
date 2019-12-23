@@ -1,6 +1,6 @@
 #include "gtest.h"
 
-#include "..\mp2-lab3-calculator\TStack.h"
+#include "..\mp2-lab3-calculator\TListStack.h"
 
 
 

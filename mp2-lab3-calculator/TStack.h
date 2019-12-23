@@ -11,6 +11,9 @@ public:
 		arr = new T[size];
 		num = -1;
 	}
+	~TStack(){
+		delete[] arr;
+	}
 
 	TStack(const TStack& st) {
 		size = st.size;
