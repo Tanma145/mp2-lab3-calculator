@@ -1,6 +1,13 @@
 #pragma once
 #include <string>
+
+#define LIST
+#ifdef LIST
+#include "TListStack.h"
+#else
 #include "TStack.h"
+#endif  //LIST
+
 class TCalculator{
 	std::string expr, postfix;
 	TStack<char> st_c;

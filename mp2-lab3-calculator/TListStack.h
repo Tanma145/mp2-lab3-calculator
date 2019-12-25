@@ -8,7 +8,7 @@ template <class T>
 class TStack{
 	TNode<T> *pFirst;
 public:
-	TStack(int a = 0);
+	TStack(int a = 1);
 	~TStack();
 	TStack(const TStack<T>& st);
 	TStack<T>& operator=(const TStack<T>& st);
@@ -73,53 +73,29 @@ bool TStack<T>::IsEmpty()const {
 	return !pFirst;
 }
 
-template <class T>//???????????
-bool TStack<T>::IsFull()const {
-	TNode<T>* p;
-	p = new TNode<T>;
-	if (p == NULL)
-	{
-		return 1;
-	}
-	else
-	{
-		delete p;
-		return 0;
-	}
-}
-
 template <class T>
 void TStack<T>::Push(const T& a) {
-	if (IsFull())
-		throw -1;
-	else{
-		TNode<T>* p = new TNode<T>;
-		p->pNext = pFirst;
-		p->val = a;
-		pFirst = p;
-	}
+	TNode<T>* p = new TNode<T>;
+	p->pNext = pFirst;
+	p->val = a;
+	pFirst = p;
 }
 
 template <class T>
 T TStack<T>::Pop() {
-	if (IsEmpty()){
-		throw -1;
-	}
-	else{
+	if (pFirst) {
 		T res = pFirst->val;
 		TNode<T>* p = pFirst;
 		pFirst = pFirst->pNext;
 		delete p;
 		return res;
 	}
+	else throw - 1;
 }
 
 template <class T>
 T TStack<T>::Top() {
-	if (IsEmpty())
-		throw -1;
-	else
-		return pFirst->val;
+	return pFirst->val;
 }
 
 template <class T>
